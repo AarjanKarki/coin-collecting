@@ -22,6 +22,7 @@ def start():
     robot.pos=WIDTH//2, HEIGHT//2
     move_bomb()
     move_coin()
+    music.play('house')
 
 def move_coin():
     coin.x=randint(20,WIDTH-20)
@@ -65,7 +66,7 @@ def update():
         sounds.find_money.play()
         move_coin()
     if robot.colliderect(bomb):
-        sounds.find_money.play()
+        sounds.bomb_explosion.play()
         move_bomb()
 
 def on_key_up(key):
